@@ -16,8 +16,7 @@ export default function Qr_scanner({ navigation }) {
 
   const handleBarCodeScanned = ({ data }) => {
     setScanned(true);
-    alert(`Bar code with type and data ${data} has been scanned!`);
-    navigation.navigate("report", { data });
+    navigation.navigate("report",{ data });
   };
 
   const renderCamera = () => {
@@ -51,14 +50,6 @@ export default function Qr_scanner({ navigation }) {
       </Text>
       <Text className="font-light">Scan a barcode to start your job.</Text>
       {renderCamera()}
-
-      {/* <TouchableOpacity
-        style={styles.button}
-        onPress={() => setScanned(false)}
-        disabled={scanned}
-      >
-        <Text style={styles.buttonText}>Scan QR to Start your job</Text>
-      </TouchableOpacity> */}
     </View>
   );
 }
